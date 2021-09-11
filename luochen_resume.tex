@@ -1,0 +1,162 @@
+%-------------------------
+% Resume in Latex
+% Author : Sourabh Bajaj
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[2]{
+  \item\small{
+    \textbf{#1}{: #2 \vspace{-2pt}}
+  }
+}
+
+% Just in case someone needs a heading that does not need to be in a list
+\newcommand{\resumeHeading}[4]{
+    \begin{tabular*}{0.99\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING-----------------
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\href{http://sourabhbajaj.com/}{\Large Luo Chen}} & Email : \href{mailto:chen.luo1@northeastern.edu}{chen.luo1@northeastern.edu}\\
+  \href{https://github.com/channel960608}{https://github.com/channel960608} & Mobile : +1-857-222-1417 \\
+\end{tabular*}
+
+
+%-----------EDUCATION-----------------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Northeastern University}{Boston, MA}
+      {Master of Science in Software Engineering Systems}{Jan. 2021 -- Jan. 2023}
+    \resumeSubheading
+      {Wuhan University}{Wuhan, China}
+      {Bachelor of Software Engineering}{Sep. 2014 -- June. 2018}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Amazon}{Shanghai, China}
+      {SDE Intern, Deep Engine-Science}{Jun 2021 - Aug 2021}
+      \resumeItemListStart
+        \resumeItem{Apache MXNet}
+          {Build up Java binding for MXNet 2.0, which allows end2end models to serve inferencing in Java language. The project is built in Gradle and uses JNA(Java Native Access) to access mxnet binaries. I finished the project solely, optimized memory management in JVM, and added CI for it.  I solved some problems in mxnet due to duplicate registration for the signal handler. https://github.com/apache/incubator-mxnet/pull/20461 (still under review)}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {4Paradigm}{Beijing, China}
+      {Software Engineer Intern, NLP Product Team}{Oct 2020 - Jun 2021}
+      \resumeItemListStart
+        \resumeItem{Sage Knowledge Base}
+          {Service for building up KG(knowledge graph) automatically according to imported documents and solving business problems using built KG. The project is a kind of Microservice Architecture based on Kubernetes. The core backend is in Java SpringBoot. We use Airflow as the workflow scheduler and Flask as the user-interactive module. Also, Databases(ArangoDB and Mysql) and S3(MinIO) are used. I have to develop on Flask module, which connects with almost all other components. I improved the efficiency of preprocessing document through Muitiprocessing and solved some difficulties like Memory Leak and Dead Lock in Python multiprocessing with the help of GDB.}
+        \resumeItem{Address Knowledge Graph}
+          {Service for address resolution and normalization, completion, and so on. It is a Java SpringBoot application. I do some feather development on it and fix some bugs. To improve delivery efficiency, I finish the service orchestration for it using Docker-Compose. I trace and solve the problem of process hanging up when loading large-capacity data and Dead Lock in Docker Log Module due to Buffer Overflow under high concurrency.}       
+        \resumeItem{Marking Platform}
+          {Web service for marking text or pictures. Users can create and assign tasks to members of the group. The backend is in Java SpringBoot, and the frontend is in Vue. Also, Docker-compose is used for service orchestration. I do full-stack development on this project based on the previous version.}
+        \resumeItem{Ops Related}
+          {Deploy and ensure the service stability of the Kubernetes Cluster. Trace the problem in different components of K8S due to various reasons like out of memory, corruption on disk, etc. Research and Deploy Ddistribted Traditional and Graph Databases (Mysql, Nebular Graph)}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Independent Developer}{Wuhan, China}
+      {Leader of my team, 2 members}{Before 2020}
+      \resumeItemListStart
+        \resumeItem{Outsourcing Projects}
+          {Easy web service, like student registration, the attendance record for the school,  and some games. Backend Service is in Java SpringMVC, Mysql, and Nginx.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------Skill Stack-----------------
+\section{Skill Stack}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Dev}
+      {Java(Spring Boot, JVM), Python(Flask, Scrapy), Node.js(Vue)}
+    \resumeSubItem{Ops}
+      {Linux, Kubernetes, Docker, Docker-compose, Jenkins, Git Actions}
+    \resumeSubItem{Others}
+    {Git, GDB, JProfier, Nebular Graph}
+  \resumeSubHeadingListEnd
+
+
+%-------------------------------------------
+\end{document}

@@ -93,8 +93,9 @@
 
 %----------HEADING-----------------
 \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-  \textbf{\href{http://sourabhbajaj.com/}{\Large Luo Chen}} & Email : \href{mailto:chen.luo1@northeastern.edu}{chen.luo1@northeastern.edu}\\
-  \href{https://github.com/channel960608}{https://github.com/channel960608} & Mobile : +1-xxx-xxx-xxxx \\
+  \textbf{{\Large Luo Chen}} & Email : \href{mailto:chen.luo1@northeastern.edu}{chen.luo1@northeastern.edu}\\
+  \href{https://github.com/channel960608}{GitHub channel960608} & Mobile : 857-557-0088 \\
+  \href{https://www.linkedin.com/in/cspchen/}{LinkedIn Luo Chen}\\
 \end{tabular*}
 
 
@@ -103,12 +104,28 @@
   \resumeSubHeadingListStart
     \resumeSubheading
       {Northeastern University}{Boston, MA}
-      {Master of Science in Software Engineering Systems}{Jan. 2021 -- Jan. 2023}
-    \resumeSubheading
+      {Master of Science in Software Engineering Systems}{GPA 3.67 Jan. 2023}
+      \resumeSubheading
       {Wuhan University}{Wuhan, China}
-      {Bachelor of Software Engineering}{Sep. 2014 -- June. 2018}
+      {Master of Science in Software Engineering}{GPA 3.73 Jun. 2020}
+      \resumeSubheading
+      {Wuhan University}{Wuhan, China}
+      {Bachelor of Software Engineering}{June. 2018}
   \resumeSubHeadingListEnd
 
+
+%-----------Skill Stack-----------------
+\section{Skill Stack}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Development}
+      {Java(SpringBoot, SpringMVC, JVM), Python(Flask, Scrapy, Sklearn), Node.js(Vue), C++, Shell}
+    \resumeSubItem{Operation}
+      {Linux, AWS Console, Terraform, Packer, Ansible, Kubernetes, Docker, Docker-compose, Jenkins, GitOps}
+    \resumeSubItem{Others}
+    {Git, GDB, JProfier, Distributed Database, Nebular Graph}
+    \resumeSubItem{Courses}
+    {Data Structure and Algorithm, Network Structure \& Cloud Computing, OOD, etc}
+  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------------
 \section{Experience}
@@ -119,44 +136,27 @@
       {SDE Intern, Deep Engine-Science}{Jun 2021 - Aug 2021}
       \resumeItemListStart
         \resumeItem{Apache MXNet}
-          {Build up Java binding for MXNet 2.0, which allows end2end models to serve inferencing in Java language. The project is built in Gradle and uses JNA(Java Native Access) to access mxnet binaries. I finished the project solely, optimized memory management in JVM, and added CI for it.  I solved some problems in mxnet due to duplicate registration for the signal handler. https://github.com/apache/incubator-mxnet/pull/20461 (still under review)}
+          {Build up Java binding for MXNet 2.0, which allows end2end models to serve inference in Java language. The project is built in Gradle, and we use JNA(Java Native Access) to access mxnet binaries. I optimized JVM memory management for mxnet resources by designing a 
+          layered garbage collection mechanism and added CI for the project. Fix some problems in mxnet due to duplicate registration for the signal handler. https://github.com/apache/incubator-mxnet/tree/java2.0. }
       \resumeItemListEnd
 
     \resumeSubheading
       {4Paradigm}{Beijing, China}
       {Software Engineer Intern, NLP Product Team}{Oct 2020 - Jun 2021}
       \resumeItemListStart
-        \resumeItem{Sage Knowledge Base}
-          {Service for building up KG(knowledge graph) automatically according to imported documents and solving business problems using built KG. The project is a kind of Microservice Architecture based on Kubernetes. The core backend is in Java SpringBoot. We use Airflow as the workflow scheduler and Flask as the user-interactive module. Also, Databases(ArangoDB and Mysql) and S3(MinIO) are used. I have to develop on Flask module, which connects with almost all other components. I improved the efficiency of preprocessing document through Muitiprocessing and solved some difficulties like Memory Leak and Dead Lock in Python multiprocessing with the help of GDB.}
-        \resumeItem{Address Knowledge Graph}
-          {Service for address resolution and normalization, completion, and so on. It is a Java SpringBoot application. I do some feather development on it and fix some bugs. To improve delivery efficiency, I finish the service orchestration for it using Docker-Compose. I trace and solve the problem of process hanging up when loading large-capacity data and Dead Lock in Docker Log Module due to Buffer Overflow under high concurrency.}       
-        \resumeItem{Marking Platform}
-          {Web service for marking text or pictures. Users can create and assign tasks to members of the group. The backend is in Java SpringBoot, and the frontend is in Vue. Also, Docker-compose is used for service orchestration. I do full-stack development on this project based on the previous version.}
-        \resumeItem{Ops Related}
-          {Deploy and ensure the service stability of the Kubernetes Cluster. Trace the problem in different components of K8S due to various reasons like out of memory, corruption on disk, etc. Research and Deploy Ddistribted Traditional and Graph Databases (Mysql, Nebular Graph)}
+        \resumeItem{Development}
+          { Do All-Stack development for several ML products. Develop in Spring-Boot, Flask, and Vue. Integrated with the services including Airflow, MinIO, ArangoDB, Mysql, Git. When the performance of the original service couldn't meet the customer's requirements, I improved the efficiency by 400\% using python multi-processing and solved the problem of memory leaks using GDB. Also, helped the customer solve the issue of service hanging in Prod due to deadlock in logging, which resulted from docker version defect. }
+        \resumeItem{Operations}
+          { Do service orchestration for products in Kubernetes and Docker-Compose. Write infrastructure as code for Kubernetes Cluster by Ansible. Trace problems in different sub-services in the K8S cluster due to resource exhaustion in Memory, CPU, and GPU. Once, we even met up with the issue in Etcd due to Hard disk bayonet damage. }
+        \resumeItem{Database cluster}
+          { Deploy Master-Slave MySQL cluster, design and realize the plan for Data Backup, Failover, and Recovery in Prod; Investigate the performance of distributed graph database cluster, NebulaGraph, in the aspects of high-concurrent/multi-step query, fault monitoring, and failover. Solve problems during the test by reading the documents provided and communicating with the developers since it is a new product. }
       \resumeItemListEnd
 
-    \resumeSubheading
-      {Independent Developer}{Wuhan, China}
-      {Leader of my team, 2 members}{Before 2020}
-      \resumeItemListStart
-        \resumeItem{Outsourcing Projects}
-          {Easy web service, like student registration, the attendance record for the school,  and some games. Backend Service is in Java SpringMVC, Mysql, and Nginx.}
-      \resumeItemListEnd
-  \resumeSubHeadingListEnd
-
-
-%-----------Skill Stack-----------------
-\section{Skill Stack}
+%-----------Projects-----------------
+\section{Projects}
   \resumeSubHeadingListStart
-    \resumeSubItem{Dev}
-      {Java(Spring Boot, JVM), Python(Flask, Scrapy), Node.js(Vue)}
-    \resumeSubItem{Ops}
-      {Linux, Kubernetes, Docker, Docker-compose, Jenkins, Git Actions}
-    \resumeSubItem{Others}
-    {Git, GDB, JProfier, Nebular Graph}
+    \resumeSubItem{Operation on AWS}
+      {Use terraform and packer to manage the lifecycle for a web service on AWS. Build AMI, setup EC2 instances, policy management for IAM, CI/CD on Github, CodeDeploy for deployment, CloudWatch for monitoring, Load Balancing, and Auto-Scaling. }
   \resumeSubHeadingListEnd
-
-
 %-------------------------------------------
 \end{document}
